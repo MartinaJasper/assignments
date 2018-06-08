@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class PrimeFactors {
+    public static void main(String[] args){
+        PrimeFactors f = new PrimeFactors();
+        Scanner s= new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n= s.nextInt();
+        ArrayList<Integer> factorsList= f.generate(n);
+        for(Integer i : factorsList)
+        {
+
+             System.out.print(i + " ");
+        }
+
+    }
+    public ArrayList<Integer> generate(int n){
+        ArrayList<Integer> fac = new ArrayList<Integer>();
+        for(int j=2;j<=n;j++)
+        {
+            while(n%j==0)
+            {
+                fac.add(j);
+                n=n/j;
+            }
+        }
+     return fac; 
+
+    }
+}
